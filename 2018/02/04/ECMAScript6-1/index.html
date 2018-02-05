@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ECMAScript6-1 | Zhangxy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 ES6加了块级作用域{}，用let和const声明变量,这样作用域旨在当前的代码块中">
+  <meta name="description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 ES6加了块级作用域{}，用let和const声明变量,这样作用域指在当前的代码块中,没有变量声明提升">
 <meta name="keywords" content="es6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMAScript6-1">
 <meta property="og:url" content="http://yoursite.com/2018/02/04/ECMAScript6-1/index.html">
 <meta property="og:site_name" content="Zhangxy&#39;s blog">
-<meta property="og:description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 ES6加了块级作用域{}，用let和const声明变量,这样作用域旨在当前的代码块中">
-<meta property="og:updated_time" content="2018-02-05T13:30:07.390Z">
+<meta property="og:description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 ES6加了块级作用域{}，用let和const声明变量,这样作用域指在当前的代码块中,没有变量声明提升">
+<meta property="og:updated_time" content="2018-02-05T13:36:38.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript6-1">
-<meta name="twitter:description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 ES6加了块级作用域{}，用let和const声明变量,这样作用域旨在当前的代码块中">
+<meta name="twitter:description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 ES6加了块级作用域{}，用let和const声明变量,这样作用域指在当前的代码块中,没有变量声明提升">
   
     <link rel="alternative" href="/atom.xml" title="Zhangxy&#39;s blog" type="application/atom+xml">
   
@@ -169,7 +169,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成<br>js由网景公司开发<br>如果使用let浏览器不报错就支持es6语法<br>借助<a href="http://babeljs.io/" target="_blank" rel="noopener">babel库</a>可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换</p>
-<p>ES6加了块级作用域{}，用let和const声明变量,这样作用域旨在当前的代码块中</p>
+<p>ES6加了块级作用域{}，用let和const声明变量,这样作用域指在当前的代码块中,没有变量声明提升<br>一旦let在作用域中声明变量 就将统治这个作用域(即使在外面声明了变量并赋值，也只执行作用域中let的声明)<br>let不可以重复声明,重复声明会报下面错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught SyntaxError: Identifier <span class="string">'a'</span> has already been declared</span><br></pre></td></tr></table></figure></p>
 
       
 
