@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ECMAScript6-1 | Zhangxy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 ES6加了块级作用域{}，用let和const声明变量，这样作用域指在当前的代码块中，没有变量声明提升">
+  <meta name="description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 块级作用域ES6加了块级作用域{}，用let和const声明变量，这样作用域指在当前的代码块中，没有变">
 <meta name="keywords" content="es6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMAScript6-1">
 <meta property="og:url" content="http://yoursite.com/2018/02/04/ECMAScript6-1/index.html">
 <meta property="og:site_name" content="Zhangxy&#39;s blog">
-<meta property="og:description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 ES6加了块级作用域{}，用let和const声明变量，这样作用域指在当前的代码块中，没有变量声明提升">
-<meta property="og:updated_time" content="2018-02-05T13:45:13.405Z">
+<meta property="og:description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 块级作用域ES6加了块级作用域{}，用let和const声明变量，这样作用域指在当前的代码块中，没有变">
+<meta property="og:updated_time" content="2018-02-06T08:50:48.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript6-1">
-<meta name="twitter:description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 ES6加了块级作用域{}，用let和const声明变量，这样作用域指在当前的代码块中，没有变量声明提升">
+<meta name="twitter:description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 块级作用域ES6加了块级作用域{}，用let和const声明变量，这样作用域指在当前的代码块中，没有变">
   
     <link rel="alternative" href="/atom.xml" title="Zhangxy&#39;s blog" type="application/atom+xml">
   
@@ -169,7 +169,35 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成<br>js由网景公司开发<br>如果使用let浏览器不报错就支持es6语法<br>借助<a href="http://babeljs.io/" target="_blank" rel="noopener">babel库</a>可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换</p>
-<p>ES6加了块级作用域{}，用let和const声明变量，这样作用域指在当前的代码块中，没有变量声明提升<br>一旦let在作用域中声明变量就将统治这个作用域（即使在外面声明了变量并赋值，也只执行作用域中let的声明）<br>let不可以重复声明，重复声明会报下面错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught SyntaxError: Identifier <span class="string">'a'</span> has already been declared</span><br></pre></td></tr></table></figure></p>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>ES6加了块级作用域{}，用let和const声明变量，这样作用域指在当前的代码块中，没有变量声明提升</p>
+<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>一旦let在作用域中声明变量就将统治这个作用域（即使在外面声明了变量并赋值，也只执行作用域中let的声明）<br>let不可以重复声明，防止变量污染，解决了闭包问题。重复声明会报下面错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught SyntaxError: Identifier <span class="string">'a'</span> has already been declared</span><br></pre></td></tr></table></figure></p>
+<p>在块级作用域中let一个变量如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="built_in">let</span> i = 0;i &lt; 10;i++)&#123;</span><br><span class="line">    div[i].onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        console.log(i)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>正常执行完一次就不能用了，但是ES6改了，相当于<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> i = 0;</span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">let</span> i = 0;i &lt; 10;i++)&#123;</span><br><span class="line">  <span class="built_in">let</span> i = 0;</span><br><span class="line">  div[i].onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    console.log(i)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>作用域内的i执行完后不能再用，加上全局的i，就可以再次使用</p>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>const一旦声明常量的值（内存地址–引用值）就不能更改，声明一个常量必须马上初始化，不能重复声明</p>
+<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><h3 id="数组解构赋值"><a href="#数组解构赋值" class="headerlink" title="数组解构赋值"></a>数组解构赋值</h3><p>本质是模式匹配（等号左右两边模式一样）。如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var [a,b,c,d] = [1,2,3,4]</span><br></pre></td></tr></table></figure></p>
+<p>对应的位置的值会赋给相应的变量。右边的值少就是解构失败，没有值的变量就是undefined，右边的值多就是不完全解构<br>报错情况： 右边不是数组（或者严格地说，不是可遍历的结构）</p>
+<h3 id="默认赋值"><a href="#默认赋值" class="headerlink" title="默认赋值"></a>默认赋值</h3><p>只有右侧严格等于undefined时才生效<br>null==undefined，null=≠=undefined<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var [a = 1,b = 3] = []</span><br></pre></td></tr></table></figure></p>
+<p>此时严格等于undefined，执行本身的赋值(a = 1,b = 3)</p>
+<h3 id="惰性求值"><a href="#惰性求值" class="headerlink" title="惰性求值"></a>惰性求值</h3><p>只有在用到的时候才会求值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">a</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> 1;</span><br><span class="line">&#125;</span><br><span class="line">var [b = a(),c = 2] = [undefined,null];</span><br><span class="line">console.log(b,c);</span><br></pre></td></tr></table></figure></p>
+<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 null</span><br></pre></td></tr></table></figure></p>
+<p>在b严格等于undefined时执行a函数，b不严格等于时不执行函数，这样不耗费性能</p>
+<h3 id="解构赋值规则"><a href="#解构赋值规则" class="headerlink" title="解构赋值规则"></a>解构赋值规则</h3><p>默认赋值可以应用解构赋值的其他变量<br>首先看右侧有无和左侧对应的值，没有的话看左侧从左到右解析<br>注意let声明时的顺序问题</p>
+<h3 id="对象解构赋值"><a href="#对象解构赋值" class="headerlink" title="对象解构赋值"></a>对象解构赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var &#123;a, b, c&#125; = &#123;</span><br><span class="line">    a : <span class="string">"1"</span>,</span><br><span class="line">    b : <span class="string">"2"</span>,</span><br><span class="line">    c : <span class="string">"3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用方法：<br>1.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>($,root)&#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">renderList</span></span>()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">renderInfo</span></span>()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    root.render = &#123;</span><br><span class="line">        renderList : renderList,</span><br><span class="line">        renderInfo : renderInfo</span><br><span class="line">    &#125;</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure></p>
+<p>使用时<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var renderInfo = root.render.renderInfo;</span><br><span class="line">var renderList = root.render.renderList;</span><br></pre></td></tr></table></figure></p>
+<p>可替换为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var &#123;renderList,renderInfo&#125; = root.render;</span><br></pre></td></tr></table></figure></p>
+<p>2.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var &#123;a : b&#125; = &#123;a : 1&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>a用来模式匹配，b是变量，把1赋给b</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line">&#123;a&#125; = &#123;a : <span class="string">"1"</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>此时js默认解析为代码块，不能赋值会报错<br>应写成<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line">(&#123;a&#125; = &#123;a : <span class="string">"1"</span>&#125;)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var &#123;name : a, age : [b, c, d]&#125; = &#123;</span><br><span class="line">    name : <span class="string">"tht"</span>,</span><br><span class="line">    age : [1,2,3]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var [a, b, c, d, e] = <span class="string">"hello"</span>;</span><br><span class="line">console.log(a, b, c, d, e);</span><br></pre></td></tr></table></figure>
+<p>输出为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h e l l o</span><br></pre></td></tr></table></figure></p>
+<p>把hello变成了一个对象</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var &#123;length&#125; = <span class="string">"hello"</span>;</span><br><span class="line">console.log(length);</span><br></pre></td></tr></table></figure>
+<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> a([b, c])&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">a([2,3]);</span><br></pre></td></tr></table></figure>
 
       
 
@@ -446,11 +474,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">md</a>
+                <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">心情</a>
+                <a href="javascript:void(0)" class="js-tag color3">md</a>
               </li>
             
             <div class="clearfix"></div>
