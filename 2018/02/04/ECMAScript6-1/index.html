@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/04/ECMAScript6-1/index.html">
 <meta property="og:site_name" content="Zhangxy&#39;s blog">
 <meta property="og:description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 块级作用域ES6加了块级作用域{}，用let和const声明变量，这样作用域指在当前的代码块中，没有变">
-<meta property="og:updated_time" content="2018-02-06T08:50:48.823Z">
+<meta property="og:updated_time" content="2018-02-13T14:58:26.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript6-1">
 <meta name="twitter:description" content="javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成js由网景公司开发如果使用let浏览器不报错就支持es6语法借助babel库可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换 块级作用域ES6加了块级作用域{}，用let和const声明变量，这样作用域指在当前的代码块中，没有变">
@@ -198,6 +198,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var &#123;length&#125; = <span class="string">"hello"</span>;</span><br><span class="line">console.log(length);</span><br></pre></td></tr></table></figure>
 <p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> a([b, c])&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">a([2,3]);</span><br></pre></td></tr></table></figure>
+<p>###字符串拓展<br>不用再用字符串拼接<br>1.使用  <code>字符串</code>  可以使字符串随意换行<br>2.使用  ${变量名}  可以在字符串中使用变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;tht&quot;;</span><br><span class="line">var b = `jfi</span><br><span class="line">oe$&#123;a&#125;</span><br><span class="line">wo`;</span><br><span class="line">console.log(b);</span><br></pre></td></tr></table></figure></p>
+<p>输出为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jfi</span><br><span class="line">    oetht</span><br><span class="line">    wo</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -470,15 +472,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ajax</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">md</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
              
               <li class="article-tag-list-item">
