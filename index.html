@@ -148,6 +148,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="push-微信小程序" class="article article-type-push  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/26/微信小程序/">微信小程序</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/26/微信小程序/" class="archive-article-date">
+  	<time datetime="2018-03-26T10:11:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/26/微信小程序/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-mobileTerminal" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -168,7 +230,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="mobile-Terminal"><a href="#mobile-Terminal" class="headerlink" title="mobile Terminal"></a>mobile Terminal</h2><p>独立像素比/window.devicePixelRatio<br>window.devicePixelRatio=物理像素/独立像素。<br>通过计算你会发现刚才的两种手机的结果分别是1或者2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>这个代码的作用就是让视图区域撑满手机物理屏幕。</p>
+<p>html文件头部加上这个代码后，手机显示的大小和电脑显示的大小尺寸大小就一样了。<br>但是手机上显示的图片就模糊了，这是因为你要显示同样的物理大小，视网膜屏幕就要用双倍的物理像素来显示（一个一像素的图片，如果用浏览器4个像素（即放大了一倍）来看会变模糊和失真，所以在给手机做图片的时候，要放大一倍，就是在手机上显示的图片是100乘以100，那ps做图片要做成200乘以200这样才会清晰）。</p>
+
       
 
       
@@ -176,6 +242,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mobile Terminal</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -217,7 +294,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/20/canvas/">canvas</a>
+      <a class="article-title" href="/2018/03/20/canvas/">H5</a>
     </h1>
   
 
@@ -233,6 +310,8 @@
         <h3 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h3><p>lineWidth 属性设置或返回当前线条的宽度，以像素计。<br>eg: ctx.lineWidth = 20;</p>
 <p>beginPath() 方法开始一条路径，或重置当前的路径。<br>ctx.beginPath();</p>
 <p>stroke() 方法绘制当前路径。</p>
+<p>HTML5 提供了两种在客户端存储数据的新方法：<br>localStorage - 没有时间限制的数据存储<br>sessionStorage - 针对一个 session 的数据存储<br>之前，这些都是由 cookie 完成的。但是 cookie 不适合大量数据的存储，因为它们由每个对服务器的请求来传递，这使得 cookie 速度很慢而且效率也不高。<br>在 HTML5 中，数据不是由每个服务器请求传递的，而是只有在请求时使用数据。它使在不影响网站性能的情况下存储大量数据成为可能。<br>对于不同的网站，数据存储于不同的区域，并且一个网站只能访问其自身的数据。<br>HTML5 使用 JavaScript 来存储和访问数据。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">localStorage.lastname=<span class="string">"Smith"</span>;</span><br><span class="line">document.write(localStorage.lastname);</span><br></pre></td></tr></table></figure>
 
       
 
@@ -925,15 +1004,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">H5 canvas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">clone js</a>
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -941,7 +1016,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es6</a>
+                <a href="javascript:void(0)" class="js-tag color4">clone js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mobile Terminal</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">H5 canvas</a>
               </li>
              
               <li class="article-tag-list-item">
