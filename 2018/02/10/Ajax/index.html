@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Ajax | Zhangxy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ajaxajax可以局部获取数据，不刷新页面，可以异步操作 form表单action属性：属性值表示提交后向何处发送数据method属性：属性值get（主要用于获取数据）/post（主要用于传数据）            get拼接数据的形式是放在url后面；post请求数据会放在数据主体中，数据显示在network下面的Form Data            get请求数据少一些，因为会把数据">
+  <meta name="description" content="Ajaxajax可以局部获取数据，不刷新页面，可以异步操作（在请求数据时不阻塞页面执行） form表单缺点：获取数据时会跳转，所以没有办法局部获取数据，所以想要局部获取数据采用ajaxaction属性：属性值表示提交后向何处发送数据method属性：属性值get（主要用于获取数据）/post（主要用于传数据）            get拼接数据的形式是放在url后面；post请求数据会放在数据主">
 <meta name="keywords" content="ajax">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ajax">
 <meta property="og:url" content="http://yoursite.com/2018/02/10/Ajax/index.html">
 <meta property="og:site_name" content="Zhangxy&#39;s blog">
-<meta property="og:description" content="Ajaxajax可以局部获取数据，不刷新页面，可以异步操作 form表单action属性：属性值表示提交后向何处发送数据method属性：属性值get（主要用于获取数据）/post（主要用于传数据）            get拼接数据的形式是放在url后面；post请求数据会放在数据主体中，数据显示在network下面的Form Data            get请求数据少一些，因为会把数据">
-<meta property="og:updated_time" content="2018-02-13T17:51:02.096Z">
+<meta property="og:description" content="Ajaxajax可以局部获取数据，不刷新页面，可以异步操作（在请求数据时不阻塞页面执行） form表单缺点：获取数据时会跳转，所以没有办法局部获取数据，所以想要局部获取数据采用ajaxaction属性：属性值表示提交后向何处发送数据method属性：属性值get（主要用于获取数据）/post（主要用于传数据）            get拼接数据的形式是放在url后面；post请求数据会放在数据主">
+<meta property="og:updated_time" content="2018-04-19T11:01:24.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax">
-<meta name="twitter:description" content="Ajaxajax可以局部获取数据，不刷新页面，可以异步操作 form表单action属性：属性值表示提交后向何处发送数据method属性：属性值get（主要用于获取数据）/post（主要用于传数据）            get拼接数据的形式是放在url后面；post请求数据会放在数据主体中，数据显示在network下面的Form Data            get请求数据少一些，因为会把数据">
+<meta name="twitter:description" content="Ajaxajax可以局部获取数据，不刷新页面，可以异步操作（在请求数据时不阻塞页面执行） form表单缺点：获取数据时会跳转，所以没有办法局部获取数据，所以想要局部获取数据采用ajaxaction属性：属性值表示提交后向何处发送数据method属性：属性值get（主要用于获取数据）/post（主要用于传数据）            get拼接数据的形式是放在url后面；post请求数据会放在数据主">
   
     <link rel="alternative" href="/atom.xml" title="Zhangxy&#39;s blog" type="application/atom+xml">
   
@@ -168,10 +168,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>ajax可以局部获取数据，不刷新页面，可以异步操作</p>
-<p>form表单<br>action属性：属性值表示提交后向何处发送数据<br>method属性：属性值get（主要用于获取数据）/post（主要用于传数据）<br>            get拼接数据的形式是放在url后面；post请求数据会放在数据主体中，数据显示在network下面的Form Data<br>            get请求数据少一些，因为会把数据拼接到url后面，输入框长度有限制</p>
+        <h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>ajax可以局部获取数据，不刷新页面，可以异步操作（在请求数据时不阻塞页面执行）</p>
+<p>form表单<br>缺点：获取数据时会跳转，所以没有办法局部获取数据，所以想要局部获取数据采用ajax<br>action属性：属性值表示提交后向何处发送数据<br>method属性：属性值get（主要用于获取数据）/post（主要用于传数据）<br>            get拼接数据的形式是放在url后面；post请求数据会放在数据主体中，数据显示在network下面的Form Data<br>            get请求数据少一些，因为会把数据拼接到url后面，输入框长度有限制</p>
 <p>最开始ajax是获取xml格式的数据，xml没有json发展好，后来网络请求以json为主</p>
 <p>ajax的open方法  (‘请求方式get/post’,’请求文件目录’,同步false或异步true)，ajax实现异步操作，参数设为true<br>    send方法一执行ajax请求就被发送出去<br>    onreadystatechange 时间改变触发<br>        readystate  对象状态（integer），状态值<br>                    0 = 未初始化，未调用send()方法<br>                    1 = 读取中，已调用send()，正在发送请求<br>                    2 = 已读取，send方法执行完成，接收到全部响应内容<br>                    3 = 交互中，正在解析响应内容<br>                    4 = 完成，响应内容解析完成<br>    status  服务器返回的状态码<br>            404 = “文件未找到”<br>            200 = “成功”<br>            500 = “服务器内部错误”<br>            304=“资源未被修改”</p>
+<p>用哪种方法请求php文件中就改成哪种方法<br>get&amp;post请求区别<br>post<br>增加了xml.setRequestHeader(“content-type”,”application/x-www-form-urlencoded”);<br>规定在发送表单数据之前如何对其进行编码：application/x-www-form-urlencoded<br>post把值放在send函数中传</p>
+<p>get<br>传值是拼接在./getNews.php?后面</p>
+<p>传参<br>method：用什么方式请求<br>url：不同函数调用的地址不同<br>flag：同步(false)&amp;异步(true)，大部分都是异步<br>data：不同的请求传的参数不同<br>callback：回调函数不一样，get是拼在url后面<br>例：get：ajax(‘GET’,’./getNews.php’,true,,cb);<br>    post:ajax(‘POST’,’./post.php’,true,str,cb2);</p>
+<p>GET请求能实现浏览器缓存</p>
 
       
 
@@ -452,19 +456,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">H5 canvas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mobile Terminal</a>
+                <a href="javascript:void(0)" class="js-tag color5">H5 canvas</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">clone js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mobile Terminal</a>
               </li>
              
               <li class="article-tag-list-item">
