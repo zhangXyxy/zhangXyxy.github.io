@@ -8,16 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>微信小程序 | Zhangxy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑龙江大学在校学生">
+  <meta name="description" content="750rpx是虚拟像素，占满整个屏幕例iphone5  320568 是物理像素逻辑像素  是像素点 例iPhone5  6401136（都乘以2）由于Android设备碎片化严重，Dpr2是密度无关像素，适应不同分辨率屏幕的尺寸 建立app.json文件在index.js中调用page函数相当于把index.js和index.wxml连接起来（小程序中用数据连接，，，正常文件js和html自动连">
+<meta name="keywords" content="Mini Program">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信小程序">
 <meta property="og:url" content="http://yoursite.com/2018/03/26/微信小程序/index.html">
 <meta property="og:site_name" content="Zhangxy&#39;s blog">
-<meta property="og:description" content="黑龙江大学在校学生">
-<meta property="og:updated_time" content="2018-03-26T10:11:31.779Z">
+<meta property="og:description" content="750rpx是虚拟像素，占满整个屏幕例iphone5  320568 是物理像素逻辑像素  是像素点 例iPhone5  6401136（都乘以2）由于Android设备碎片化严重，Dpr2是密度无关像素，适应不同分辨率屏幕的尺寸 建立app.json文件在index.js中调用page函数相当于把index.js和index.wxml连接起来（小程序中用数据连接，，，正常文件js和html自动连">
+<meta property="og:updated_time" content="2018-04-25T06:31:24.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序">
-<meta name="twitter:description" content="黑龙江大学在校学生">
+<meta name="twitter:description" content="750rpx是虚拟像素，占满整个屏幕例iphone5  320568 是物理像素逻辑像素  是像素点 例iPhone5  6401136（都乘以2）由于Android设备碎片化严重，Dpr2是密度无关像素，适应不同分辨率屏幕的尺寸 建立app.json文件在index.js中调用page函数相当于把index.js和index.wxml连接起来（小程序中用数据连接，，，正常文件js和html自动连">
   
     <link rel="alternative" href="/atom.xml" title="Zhangxy&#39;s blog" type="application/atom+xml">
   
@@ -167,7 +168,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>750rpx是虚拟像素，占满整个屏幕<br>例iphone5  320<em>568 是物理像素<br>逻辑像素  是像素点 例iPhone5  640</em>1136（都乘以2）<br>由于Android设备碎片化严重，Dpr2是密度无关像素，适应不同分辨率屏幕的尺寸</p>
+<p>建立app.json文件<br>在index.js中调用page函数相当于把index.js和index.wxml连接起来（小程序中用数据连接，，，正常文件js和html自动连接）<br>生命周期<br>onLoad和onShow之后视图还没渲染完，还缺少变量<br>onReady表示视图渲染已经完成<br>然后发送数据，每一次发送数据视图都会重新渲染<br>跳到后台（后台运行）调用onHide，跳回前台调用onShow  可以做一些逻辑操作eg:动图停下<br>onUnload卸载页面（从一个页面切换到另一个页面）可以做一些逻辑操作eg:清缓存</p>
+<p>clickable设置空间是否可点击（属性：true 可以点击）</p>
+<p>利用Easy Mock设置假数据，创建接口时使用json格式，创建<br>点击“小眼睛”图标可以预览，网址就是链接<br>在微信公众平台中：设置 -&gt; 开发设置 -&gt; request合法域名，把要请求的域名添加进去（微信小程序的请求协议是https）</p>
+<p>建立第二个页面，第二个页面js文件生命周期，在上一个页面的参数全都传到这个页面的options中</p>
+<p>wx.redirectTo使跳转到另一个页面</p>
+<p>点击“结束骑行”会回到最开始页面，如果没有点击停止用车只是回到初始页面应该将计时页面放在后台运行，否则会重新扫码用车<br>wx.navigateTo会使页面到后台运行</p>
+<p>wx.navigateBack({<br>delta : 1;  //表示返回一个页面，，数值是几就回退几个页面<br>})</p>
+<p>wx:for<br>如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并且希望列表中的项目保持自己的特征和状态（如 <input> 中的输入内容，<switch> 的选中状态），需要使用 wx:key 来指定列表中项目的唯一的标识符。</switch></p>
+<p>block组件  起到包裹的作用，，在wxml页面中不显示此标签，在block上写wx:for可以把内容都渲染出来</p>
+<p>rpx是自适应的，基本在所有浏览器都没问题</p>
+<p>vertical-align 图片对齐属性   top上面对齐</p>
+<p>bindtap绑定事件</p>
+<p>currentTarget -&gt; dataset -&gt; index(绑定的data-index，如果绑定data-id则是id)</p>
+<p>删除图片，splice改变原数组，返回值是截取的数，放上被改变的原数组，一次删一个</p>
+<p>使用localstorage<br>查看输入的充值数据是否合法（不合法情况：&lt; 0 或者是NaN）</p>
+
       
 
       
@@ -201,6 +218,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Mini Program</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -265,11 +293,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/04/21/CSS3/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/04/21/H5/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CSS3
+          H5
         
       </div>
     </a>
@@ -428,15 +456,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mobile Terminal</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">H5 canvas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,11 +472,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">H5 canvas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">md</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color3">Mini Program</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mobile Terminal</a>
               </li>
             
             <div class="clearfix"></div>
