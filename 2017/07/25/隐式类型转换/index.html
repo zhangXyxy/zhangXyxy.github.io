@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>堆栈 | Zhangxy&#39;s blog</title>
+  <title>隐式类型转换 | Zhangxy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="堆栈js堆栈与克隆">
-<meta name="keywords" content="clone js">
+  <meta name="description" content="隐式类型转换一.值类型之间的数据类型转换(1)数字和字符串使用+运算符 数字和字符串如果使用+运算符进行操作，那么会将数字先转换为字符串，然后进行字符串连接操作: 123var a = &quot;a&quot;;var num = 1;console.log(a+1); (2)布尔值参与的+运算符操作 如果有布尔型参与，那么首先会将布尔值转换为对应的数字或者字符串，然后再进行相应的字符串连接或者算数运算。 123v">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="堆栈">
-<meta property="og:url" content="http://yoursite.com/2018/03/07/堆栈/index.html">
+<meta property="og:title" content="隐式类型转换">
+<meta property="og:url" content="http://yoursite.com/2017/07/25/隐式类型转换/index.html">
 <meta property="og:site_name" content="Zhangxy&#39;s blog">
-<meta property="og:description" content="堆栈js堆栈与克隆">
-<meta property="og:updated_time" content="2018-03-10T03:10:25.850Z">
+<meta property="og:description" content="隐式类型转换一.值类型之间的数据类型转换(1)数字和字符串使用+运算符 数字和字符串如果使用+运算符进行操作，那么会将数字先转换为字符串，然后进行字符串连接操作: 123var a = &quot;a&quot;;var num = 1;console.log(a+1); (2)布尔值参与的+运算符操作 如果有布尔型参与，那么首先会将布尔值转换为对应的数字或者字符串，然后再进行相应的字符串连接或者算数运算。 123v">
+<meta property="og:updated_time" content="2018-04-25T13:31:29.566Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="堆栈">
-<meta name="twitter:description" content="堆栈js堆栈与克隆">
+<meta name="twitter:title" content="隐式类型转换">
+<meta name="twitter:description" content="隐式类型转换一.值类型之间的数据类型转换(1)数字和字符串使用+运算符 数字和字符串如果使用+运算符进行操作，那么会将数字先转换为字符串，然后进行字符串连接操作: 123var a = &quot;a&quot;;var num = 1;console.log(a+1); (2)布尔值参与的+运算符操作 如果有布尔型参与，那么首先会将布尔值转换为对应的数字或者字符串，然后再进行相应的字符串连接或者算数运算。 123v">
   
     <link rel="alternative" href="/atom.xml" title="Zhangxy&#39;s blog" type="application/atom+xml">
   
@@ -148,27 +148,76 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-堆栈" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-隐式类型转换" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      堆栈
+      隐式类型转换
     </h1>
   
 
         
-        <a href="/2018/03/07/堆栈/" class="archive-article-date">
-  	<time datetime="2018-03-07T13:52:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
+        <a href="/2017/07/25/隐式类型转换/" class="archive-article-date">
+  	<time datetime="2017-07-25T12:56:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="堆栈"><a href="#堆栈" class="headerlink" title="堆栈"></a>堆栈</h2><p><a href="https://www.cnblogs.com/chengguanhui/p/4737413.html" target="_blank" rel="noopener">js堆栈与克隆</a></p>
+        <h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><p>一.值类型之间的数据类型转换<br>(1)数字和字符串使用+运算符</p>
+<p>数字和字符串如果使用+运算符进行操作，那么会将数字先转换为字符串，然后进行字符串连接操作:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = <span class="string">"a"</span>;</span><br><span class="line">var num = 1;</span><br><span class="line">console.log(a+1);</span><br></pre></td></tr></table></figure>
+<p>(2)布尔值参与的+运算符操作</p>
+<p>如果有布尔型参与，那么首先会将布尔值转换为对应的数字或者字符串，然后再进行相应的字符串连接或者算数运算。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var bool = <span class="literal">true</span>;</span><br><span class="line">var num = 1;</span><br><span class="line">console.log(bool + num);</span><br></pre></td></tr></table></figure>
+<p>上面的代码是先将true转换为数字1，然后再进行算数加运算。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var bool = <span class="literal">true</span>;</span><br><span class="line">var num = <span class="string">"1"</span>;</span><br><span class="line">console.log(bool + num);</span><br></pre></td></tr></table></figure>
+<p>上面的布尔值会被转换为对应的字符串形式”true”，然后再进行字符串连接。</p>
+<p>(3)减法操作:(乘，除，大于，小于跟减的转换一样)</p>
+<p>如果进行减法操作，那么两个操作数都会先被转换为数字，然后在进行算数运算:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var bool = <span class="literal">true</span>;</span><br><span class="line">var num = <span class="string">"5"</span>;</span><br><span class="line">console.log(bool - num);</span><br></pre></td></tr></table></figure>
+<p>true会被转换为数字1，字符串”5”会被转换为数字5，然后进行算术运算。</p>
+<p>(4)==等性运算:</p>
+<p>undefined和null比较特殊，它们两个使用==运算符返回值是true。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(undefined==null);</span><br></pre></td></tr></table></figure>
+<p>其他值类型进行比较的时候都会将运算数转换为数字</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(<span class="string">"1"</span>==1);</span><br></pre></td></tr></table></figure>
+<p>上面的代码会将字符串”1”转换成数字，然后再进行比较。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(<span class="string">"1"</span>==<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<p>上面的代码会分别将”1”和true转换成数字，然后进行比较。</p>
+<p>二.引用类型转值类型:</p>
+<p>引用类型（对象）转换为值类型则要复杂很多，下面分布展开介绍。</p>
+<p>对象继承的两个方法可以帮助我们实现对象到值类型的转换功能:</p>
+<p>(1)toString()方法。<br>(2)valueOf()方法。</p>
+<p>通常情况下我们认为，将一个对象转换为字符串要调用toString()方法，转换为数字要调用valueOf()方法，但是真正应用的时候并没有这么简单，看如下代码实例:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line"> webName: <span class="string">"嗷嗷"</span>,</span><br><span class="line"> url:<span class="string">"softwhy.com"</span></span><br><span class="line">&#125;</span><br><span class="line">console.log(obj.toString());</span><br></pre></td></tr></table></figure>
+<p>从上面的代码可以看出，toString()方法并没有将对象转换为一个能够反映此对象的字符串。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3];</span><br><span class="line">console.log(arr.valueOf());</span><br></pre></td></tr></table></figure>
+<p>从上面的代码可以看出，valueOf()方法并没有将对象转换为能够反映此对象的一个数字。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3];</span><br><span class="line">console.log(arr.toString());</span><br></pre></td></tr></table></figure>
+<p>数组对象的toString()方法能够将数组转换为能够反映此数组对象的字符串。</p>
+<p>总结:</p>
+<p>(1)有些对象只是简单继承了toString()或者valueOf()方法，比如第一个例子。<br>(2)有些对象则不但是继承了两个方法，而且还进行了重写。</p>
+<p>所以有些对象的方法能够达成转换成字符串或者数字的目标，有些则不能。</p>
+<p>调用toString()或者valueOf()将对象转换成字符串或者数字的规则如下:</p>
+<p>调用toString()时，如果对象具有这个方法，则调用此方法；如果此方法返回一个值类型数据，那么就返回这个值类型数据，然后再根据所处的上下文环境进行相关数据类型转换。如果没有toString()，或者此方法返回值并不是一个值类型数据，那么就会调用valueOf()（如果此方法存在的话），如果valueOf()返回一个值类型数据，那么再根据所处的上下文环境进行相关的数据类型转换。</p>
+<p>进一步说明:</p>
+<p>(1)上面介绍了通常默认情况下valueOf()和toString()方法的作用（将对象转换为数字或者字符串），但是需要注意的是，这并不是硬性规定，也就是说并不是valueOf()方法必须要返回数字或者toString()方法必须要转换为字符串，比如简单继承的这两个方法就无法进行实现转换为数字和字符串的功能，再比如，我们可以自己称谢这两个方法，返回值也没有必要是数字或者字符串。</p>
+<p>(2)还有需要特别注意的一点就是，很多朋友认为，转换为字符串首先要调用toString()方法， 其实这是错误的认识，我们应该这么理解，调用toString()方法可以转换为字符串，但不一定转换字符串就是首先调用toString()方法。</p>
+<p>看如下代码实例:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [];</span><br><span class="line">arr.valueOf = <span class="function"><span class="title">function</span></span> () &#123; <span class="built_in">return</span> <span class="string">"1"</span>; &#125;</span><br><span class="line">arr.toString = <span class="function"><span class="title">function</span></span> () &#123; <span class="built_in">return</span> <span class="string">"2"</span>; &#125;</span><br><span class="line">console.log(arr + <span class="string">"1"</span>);</span><br></pre></td></tr></table></figure>
+<p>上面的代码中，arr是要被转换为字符串的，但是很明显是调用的valueOf()方法，而没有调用toString()方法。有些朋友可能会有这样的质疑，难道[2]这样的数字转换成字符串”2”，不是调用的toString()方法吗。</p>
+<p>代码如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [2];</span><br><span class="line">console.log(arr + <span class="string">"1"</span>);</span><br></pre></td></tr></table></figure>
+<p>其实过程是这样的，首先arr会首先调用valueOf()方法，但是数字的此方法是简单继承而来，并没有重写（当然这个重写不是我们实现），返回值是数组对象本身，并不是一个值类型，所以就转而调用toString()方法，于是就实现了转换为字符串的目的。</p>
+<p>总结如下:</p>
+<p>大多数对象隐式转换为值类型都是首先尝试调用valueOf()方法。但是Date对象是个例外，此对象的valueOf()和toString()方法都经过精心重写，默认是调用toString()方法，比如使用+运算符，如果在其他算数运算环境中，则会转而调用valueOf()方法。</p>
+<p>代码实例如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var date = new Date();</span><br><span class="line">console.log(date + <span class="string">"1"</span>);</span><br><span class="line">console.log(date + 1);</span><br><span class="line">console.log(date - 1);</span><br><span class="line">console.log(date * 1);</span><br></pre></td></tr></table></figure>
 
       
 
@@ -208,7 +257,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">clone js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -264,7 +313,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/03/07/堆栈/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/07/25/隐式类型转换/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,20 +327,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/10/node/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/02/03/first/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          node
+          first
         
       </div>
     </a>
   
-  
-    <a href="/2018/02/10/Ajax/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Ajax</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -317,7 +361,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="堆栈" data-title="堆栈" data-url="http://yoursite.com/2018/03/07/堆栈/"></div>
+	<div class="ds-thread" data-thread-key="隐式类型转换" data-title="隐式类型转换" data-url="http://yoursite.com/2017/07/25/隐式类型转换/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -339,7 +383,7 @@
   
 
   
-  <div id="SOHUCS" sid="堆栈" ></div> 
+  <div id="SOHUCS" sid="隐式类型转换" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({

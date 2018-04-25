@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>skills | Zhangxy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="PparseInt()parseInt(string,radix);string必须填写，radix可不写。表示要解析的数字的基数。该值介于 2 ~ 36 之间。如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。12parseInt(&quot;5&quot;);			/">
+  <meta name="description" content="PparseInt()parseInt(string,radix);  把一个字符串转换成一个整形 string必须填写。radix可不写，表示要解析的数字的基数。该值介于 2 ~ 36 之间。如果省略该参数或其值为 0，则数字将以 10 为基底来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。 123">
 <meta property="og:type" content="article">
 <meta property="og:title" content="skills">
 <meta property="og:url" content="http://yoursite.com/2018/04/25/skills/index.html">
 <meta property="og:site_name" content="Zhangxy&#39;s blog">
-<meta property="og:description" content="PparseInt()parseInt(string,radix);string必须填写，radix可不写。表示要解析的数字的基数。该值介于 2 ~ 36 之间。如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。12parseInt(&quot;5&quot;);			/">
-<meta property="og:updated_time" content="2018-04-25T06:14:01.584Z">
+<meta property="og:description" content="PparseInt()parseInt(string,radix);  把一个字符串转换成一个整形 string必须填写。radix可不写，表示要解析的数字的基数。该值介于 2 ~ 36 之间。如果省略该参数或其值为 0，则数字将以 10 为基底来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。 123">
+<meta property="og:updated_time" content="2018-04-25T13:22:37.143Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="skills">
-<meta name="twitter:description" content="PparseInt()parseInt(string,radix);string必须填写，radix可不写。表示要解析的数字的基数。该值介于 2 ~ 36 之间。如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。12parseInt(&quot;5&quot;);			/">
+<meta name="twitter:description" content="PparseInt()parseInt(string,radix);  把一个字符串转换成一个整形 string必须填写。radix可不写，表示要解析的数字的基数。该值介于 2 ~ 36 之间。如果省略该参数或其值为 0，则数字将以 10 为基底来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。 123">
   
     <link rel="alternative" href="/atom.xml" title="Zhangxy&#39;s blog" type="application/atom+xml">
   
@@ -167,9 +167,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>P<br>parseInt()<br>parseInt(string,radix);<br>string必须填写，radix可不写。表示要解析的数字的基数。该值介于 2 ~ 36 之间。如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseInt(<span class="string">"5"</span>);			//返回 5</span><br><span class="line">parseInt(<span class="string">"11"</span>,2);		//返回 3 (2+1)</span><br></pre></td></tr></table></figure></p>
-<p>按10进制去处理字符串，碰到非数字字符，会将后面的全部无视<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseInt(<span class="string">'45fa5'</span>,10);   //返回 45</span><br></pre></td></tr></table></figure></p>
+        <h2 id="P"><a href="#P" class="headerlink" title="P"></a>P</h2><h3 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h3><pre><code>parseInt(string,radix);  把一个字符串转换成一个整形
+string必须填写。radix可不写，表示要解析的数字的基数。该值介于 2 ~ 36 之间。如果省略该参数或其值为 0，则数字将以 10 为基底来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parseInt(10.9)      //返回 10 (小数点后舍弃)</span><br><span class="line">parseInt(<span class="string">"5"</span>);	    //返回 5</span><br><span class="line">parseInt(<span class="string">"11"</span>,2);   //返回 3 (2+1)</span><br></pre></td></tr></table></figure>
 
+按10进制去处理字符串，碰到非数字字符，会将后面的全部无视
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseInt(<span class="string">'45fa5'</span>,10);   //返回 45</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString"></a>toString</h3><pre><code>toString(radix);  把一个数值转换成一个字符串
+除了a=undefined不能以外，其它任何一个变量如果它存在任何一个值都可以调用toString方法
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var num = 8;</span><br><span class="line">num.toString(2);  //返回 1000 (把十进制转换成二进制输出)</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><pre><code>String(mix)  把任意一个值转换成string
+</code></pre>
       
 
       
@@ -421,11 +429,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color5">H5 canvas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -433,15 +437,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">clone js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">H5 canvas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">md</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">clone js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,7 +449,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mobile Terminal</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
             
             <div class="clearfix"></div>

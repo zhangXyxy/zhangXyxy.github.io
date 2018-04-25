@@ -148,112 +148,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-ECMAScript6-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/04/ECMAScript6-1/">ECMAScript6-1</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/04/ECMAScript6-1/" class="archive-article-date">
-  	<time datetime="2018-02-04T09:57:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>javascript是js语法+ECMA标准+DOM(W3C提供)+BOM(各浏览器提供)组成<br>js由网景公司开发<br>如果使用let浏览器不报错就支持es6语法<br>借助<a href="http://babeljs.io/" target="_blank" rel="noopener">babel库</a>可以使es6语法转换为es5，用命令行下载babel-cli借助其转换为es5的语法，使用gulp借助babel也可以实现转换</p>
-<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>ES6加了块级作用域{}，用let和const声明变量，这样作用域指在当前的代码块中，没有变量声明提升</p>
-<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>一旦let在作用域中声明变量就将统治这个作用域（即使在外面声明了变量并赋值，也只执行作用域中let的声明）<br>let不可以重复声明，防止变量污染，解决了闭包问题。重复声明会报下面错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught SyntaxError: Identifier <span class="string">'a'</span> has already been declared</span><br></pre></td></tr></table></figure></p>
-<p>在块级作用域中let一个变量如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="built_in">let</span> i = 0;i &lt; 10;i++)&#123;</span><br><span class="line">    div[i].onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        console.log(i)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>正常执行完一次就不能用了，但是ES6改了，相当于<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> i = 0;</span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">let</span> i = 0;i &lt; 10;i++)&#123;</span><br><span class="line">  <span class="built_in">let</span> i = 0;</span><br><span class="line">  div[i].onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    console.log(i)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>作用域内的i执行完后不能再用，加上全局的i，就可以再次使用</p>
-<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>const一旦声明常量的值（内存地址–引用值）就不能更改，声明一个常量必须马上初始化，不能重复声明</p>
-<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><h3 id="数组解构赋值"><a href="#数组解构赋值" class="headerlink" title="数组解构赋值"></a>数组解构赋值</h3><p>本质是模式匹配（等号左右两边模式一样）。如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var [a,b,c,d] = [1,2,3,4]</span><br></pre></td></tr></table></figure></p>
-<p>对应的位置的值会赋给相应的变量。右边的值少就是解构失败，没有值的变量就是undefined，右边的值多就是不完全解构<br>报错情况： 右边不是数组（或者严格地说，不是可遍历的结构）</p>
-<h3 id="默认赋值"><a href="#默认赋值" class="headerlink" title="默认赋值"></a>默认赋值</h3><p>只有右侧严格等于undefined时才生效<br>null==undefined，null=≠=undefined<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var [a = 1,b = 3] = []</span><br></pre></td></tr></table></figure></p>
-<p>此时严格等于undefined，执行本身的赋值(a = 1,b = 3)</p>
-<h3 id="惰性求值"><a href="#惰性求值" class="headerlink" title="惰性求值"></a>惰性求值</h3><p>只有在用到的时候才会求值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">a</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> 1;</span><br><span class="line">&#125;</span><br><span class="line">var [b = a(),c = 2] = [undefined,null];</span><br><span class="line">console.log(b,c);</span><br></pre></td></tr></table></figure></p>
-<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 null</span><br></pre></td></tr></table></figure></p>
-<p>在b严格等于undefined时执行a函数，b不严格等于时不执行函数，这样不耗费性能</p>
-<h3 id="解构赋值规则"><a href="#解构赋值规则" class="headerlink" title="解构赋值规则"></a>解构赋值规则</h3><p>默认赋值可以应用解构赋值的其他变量<br>首先看右侧有无和左侧对应的值，没有的话看左侧从左到右解析<br>注意let声明时的顺序问题</p>
-<h3 id="对象解构赋值"><a href="#对象解构赋值" class="headerlink" title="对象解构赋值"></a>对象解构赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var &#123;a, b, c&#125; = &#123;</span><br><span class="line">    a : <span class="string">"1"</span>,</span><br><span class="line">    b : <span class="string">"2"</span>,</span><br><span class="line">    c : <span class="string">"3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用方法：<br>1.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>($,root)&#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">renderList</span></span>()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">renderInfo</span></span>()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    root.render = &#123;</span><br><span class="line">        renderList : renderList,</span><br><span class="line">        renderInfo : renderInfo</span><br><span class="line">    &#125;</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure></p>
-<p>使用时<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var renderInfo = root.render.renderInfo;</span><br><span class="line">var renderList = root.render.renderList;</span><br></pre></td></tr></table></figure></p>
-<p>可替换为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var &#123;renderList,renderInfo&#125; = root.render;</span><br></pre></td></tr></table></figure></p>
-<p>2.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var &#123;a : b&#125; = &#123;a : 1&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>a用来模式匹配，b是变量，把1赋给b</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line">&#123;a&#125; = &#123;a : <span class="string">"1"</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>此时js默认解析为代码块，不能赋值会报错<br>应写成<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line">(&#123;a&#125; = &#123;a : <span class="string">"1"</span>&#125;)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var &#123;name : a, age : [b, c, d]&#125; = &#123;</span><br><span class="line">    name : <span class="string">"tht"</span>,</span><br><span class="line">    age : [1,2,3]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var [a, b, c, d, e] = <span class="string">"hello"</span>;</span><br><span class="line">console.log(a, b, c, d, e);</span><br></pre></td></tr></table></figure>
-<p>输出为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h e l l o</span><br></pre></td></tr></table></figure></p>
-<p>把hello变成了一个对象</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var &#123;length&#125; = <span class="string">"hello"</span>;</span><br><span class="line">console.log(length);</span><br></pre></td></tr></table></figure>
-<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> a([b, c])&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">a([2,3]);</span><br></pre></td></tr></table></figure>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>不用再用字符串拼接<br>1.使用  <code>字符串</code>  可以使字符串随意换行<br>2.使用  ${变量名}  可以在字符串中使用变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;tht&quot;;</span><br><span class="line">var b = `jfi</span><br><span class="line">oe$&#123;a&#125;</span><br><span class="line">wo`;</span><br><span class="line">console.log(b);</span><br></pre></td></tr></table></figure></p>
-<p>输出为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jfi</span><br><span class="line">    oetht</span><br><span class="line">    wo</span><br></pre></td></tr></table></figure></p>
-<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>Array.from 方法用于将两类对象转为真正的数组：类似数组的对象和可遍历的对象</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/04/ECMAScript6-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -274,7 +168,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="图片上传问题"><a href="#图片上传问题" class="headerlink" title="图片上传问题"></a>图片上传问题</h2><p><a href="https://www.jianshu.com/p/c2ba9533088a" target="_blank" rel="noopener">图片上传问题</a></p>
+        <h3 id="图片上传问题"><a href="#图片上传问题" class="headerlink" title="图片上传问题"></a>图片上传问题</h3><p><a href="https://www.jianshu.com/p/c2ba9533088a" target="_blank" rel="noopener">图片上传问题</a></p>
 <h2 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h2><p>  <a href="http://wowubuntu.com/markdown/" target="_blank" rel="noopener">markdown语法规范</a>It’s necessary to learn!</p>
 <p>Markdown 的格式语法只涵盖纯文本可以涵盖的范围。不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。要制约的只有一些 HTML 区块元素――比如 &lt;div&gt;、&lt;table&gt;、&lt;pre&gt;、&lt;p&gt; 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。在 HTML 区块标签间的 Markdown 格式语法将不会被处理。比如，你在 HTML 区块内使用 Markdown 样式的<em>强调</em>会没有效果。</p>
 <h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>Markdown 支持有序列表和无序列表。</p>
@@ -423,6 +317,129 @@
 
 
   
+    <article id="post-隐式类型转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/25/隐式类型转换/">隐式类型转换</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/25/隐式类型转换/" class="archive-article-date">
+  	<time datetime="2017-07-25T12:56:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><p>一.值类型之间的数据类型转换<br>(1)数字和字符串使用+运算符</p>
+<p>数字和字符串如果使用+运算符进行操作，那么会将数字先转换为字符串，然后进行字符串连接操作:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = <span class="string">"a"</span>;</span><br><span class="line">var num = 1;</span><br><span class="line">console.log(a+1);</span><br></pre></td></tr></table></figure>
+<p>(2)布尔值参与的+运算符操作</p>
+<p>如果有布尔型参与，那么首先会将布尔值转换为对应的数字或者字符串，然后再进行相应的字符串连接或者算数运算。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var bool = <span class="literal">true</span>;</span><br><span class="line">var num = 1;</span><br><span class="line">console.log(bool + num);</span><br></pre></td></tr></table></figure>
+<p>上面的代码是先将true转换为数字1，然后再进行算数加运算。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var bool = <span class="literal">true</span>;</span><br><span class="line">var num = <span class="string">"1"</span>;</span><br><span class="line">console.log(bool + num);</span><br></pre></td></tr></table></figure>
+<p>上面的布尔值会被转换为对应的字符串形式”true”，然后再进行字符串连接。</p>
+<p>(3)减法操作:(乘，除，大于，小于跟减的转换一样)</p>
+<p>如果进行减法操作，那么两个操作数都会先被转换为数字，然后在进行算数运算:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var bool = <span class="literal">true</span>;</span><br><span class="line">var num = <span class="string">"5"</span>;</span><br><span class="line">console.log(bool - num);</span><br></pre></td></tr></table></figure>
+<p>true会被转换为数字1，字符串”5”会被转换为数字5，然后进行算术运算。</p>
+<p>(4)==等性运算:</p>
+<p>undefined和null比较特殊，它们两个使用==运算符返回值是true。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(undefined==null);</span><br></pre></td></tr></table></figure>
+<p>其他值类型进行比较的时候都会将运算数转换为数字</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(<span class="string">"1"</span>==1);</span><br></pre></td></tr></table></figure>
+<p>上面的代码会将字符串”1”转换成数字，然后再进行比较。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(<span class="string">"1"</span>==<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<p>上面的代码会分别将”1”和true转换成数字，然后进行比较。</p>
+<p>二.引用类型转值类型:</p>
+<p>引用类型（对象）转换为值类型则要复杂很多，下面分布展开介绍。</p>
+<p>对象继承的两个方法可以帮助我们实现对象到值类型的转换功能:</p>
+<p>(1)toString()方法。<br>(2)valueOf()方法。</p>
+<p>通常情况下我们认为，将一个对象转换为字符串要调用toString()方法，转换为数字要调用valueOf()方法，但是真正应用的时候并没有这么简单，看如下代码实例:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line"> webName: <span class="string">"嗷嗷"</span>,</span><br><span class="line"> url:<span class="string">"softwhy.com"</span></span><br><span class="line">&#125;</span><br><span class="line">console.log(obj.toString());</span><br></pre></td></tr></table></figure>
+<p>从上面的代码可以看出，toString()方法并没有将对象转换为一个能够反映此对象的字符串。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3];</span><br><span class="line">console.log(arr.valueOf());</span><br></pre></td></tr></table></figure>
+<p>从上面的代码可以看出，valueOf()方法并没有将对象转换为能够反映此对象的一个数字。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3];</span><br><span class="line">console.log(arr.toString());</span><br></pre></td></tr></table></figure>
+<p>数组对象的toString()方法能够将数组转换为能够反映此数组对象的字符串。</p>
+<p>总结:</p>
+<p>(1)有些对象只是简单继承了toString()或者valueOf()方法，比如第一个例子。<br>(2)有些对象则不但是继承了两个方法，而且还进行了重写。</p>
+<p>所以有些对象的方法能够达成转换成字符串或者数字的目标，有些则不能。</p>
+<p>调用toString()或者valueOf()将对象转换成字符串或者数字的规则如下:</p>
+<p>调用toString()时，如果对象具有这个方法，则调用此方法；如果此方法返回一个值类型数据，那么就返回这个值类型数据，然后再根据所处的上下文环境进行相关数据类型转换。如果没有toString()，或者此方法返回值并不是一个值类型数据，那么就会调用valueOf()（如果此方法存在的话），如果valueOf()返回一个值类型数据，那么再根据所处的上下文环境进行相关的数据类型转换。</p>
+<p>进一步说明:</p>
+<p>(1)上面介绍了通常默认情况下valueOf()和toString()方法的作用（将对象转换为数字或者字符串），但是需要注意的是，这并不是硬性规定，也就是说并不是valueOf()方法必须要返回数字或者toString()方法必须要转换为字符串，比如简单继承的这两个方法就无法进行实现转换为数字和字符串的功能，再比如，我们可以自己称谢这两个方法，返回值也没有必要是数字或者字符串。</p>
+<p>(2)还有需要特别注意的一点就是，很多朋友认为，转换为字符串首先要调用toString()方法， 其实这是错误的认识，我们应该这么理解，调用toString()方法可以转换为字符串，但不一定转换字符串就是首先调用toString()方法。</p>
+<p>看如下代码实例:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [];</span><br><span class="line">arr.valueOf = <span class="function"><span class="title">function</span></span> () &#123; <span class="built_in">return</span> <span class="string">"1"</span>; &#125;</span><br><span class="line">arr.toString = <span class="function"><span class="title">function</span></span> () &#123; <span class="built_in">return</span> <span class="string">"2"</span>; &#125;</span><br><span class="line">console.log(arr + <span class="string">"1"</span>);</span><br></pre></td></tr></table></figure>
+<p>上面的代码中，arr是要被转换为字符串的，但是很明显是调用的valueOf()方法，而没有调用toString()方法。有些朋友可能会有这样的质疑，难道[2]这样的数字转换成字符串”2”，不是调用的toString()方法吗。</p>
+<p>代码如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [2];</span><br><span class="line">console.log(arr + <span class="string">"1"</span>);</span><br></pre></td></tr></table></figure>
+<p>其实过程是这样的，首先arr会首先调用valueOf()方法，但是数字的此方法是简单继承而来，并没有重写（当然这个重写不是我们实现），返回值是数组对象本身，并不是一个值类型，所以就转而调用toString()方法，于是就实现了转换为字符串的目的。</p>
+<p>总结如下:</p>
+<p>大多数对象隐式转换为值类型都是首先尝试调用valueOf()方法。但是Date对象是个例外，此对象的valueOf()和toString()方法都经过精心重写，默认是调用toString()方法，比如使用+运算符，如果在其他算数运算环境中，则会转而调用valueOf()方法。</p>
+<p>代码实例如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var date = new Date();</span><br><span class="line">console.log(date + <span class="string">"1"</span>);</span><br><span class="line">console.log(date + 1);</span><br><span class="line">console.log(date - 1);</span><br><span class="line">console.log(date * 1);</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/25/隐式类型转换/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
@@ -516,11 +533,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color5">H5 canvas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,15 +541,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">clone js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">H5 canvas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">md</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">clone js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,7 +553,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mobile Terminal</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
             
             <div class="clearfix"></div>
