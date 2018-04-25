@@ -387,6 +387,8 @@
 <p>大多数对象隐式转换为值类型都是首先尝试调用valueOf()方法。但是Date对象是个例外，此对象的valueOf()和toString()方法都经过精心重写，默认是调用toString()方法，比如使用+运算符，如果在其他算数运算环境中，则会转而调用valueOf()方法。</p>
 <p>代码实例如下:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var date = new Date();</span><br><span class="line">console.log(date + <span class="string">"1"</span>);</span><br><span class="line">console.log(date + 1);</span><br><span class="line">console.log(date - 1);</span><br><span class="line">console.log(date * 1);</span><br></pre></td></tr></table></figure>
+<p>另:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">undefined &lt;= 0  <span class="literal">false</span></span><br><span class="line">undefined =&gt; 0  <span class="literal">false</span></span><br><span class="line">undefined == 0  <span class="literal">false</span></span><br><span class="line">null &lt;= 0  <span class="literal">true</span></span><br><span class="line">undefined == null <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>不发生隐式类型转换: ===  !==</p>
 
       
 
@@ -533,7 +535,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">H5 canvas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">md</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,7 +555,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">md</a>
+                <a href="javascript:void(0)" class="js-tag color1">mobile Terminal</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,19 +567,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mobile Terminal</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
             
             <div class="clearfix"></div>

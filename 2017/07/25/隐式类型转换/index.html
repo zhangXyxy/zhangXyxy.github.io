@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/25/隐式类型转换/index.html">
 <meta property="og:site_name" content="Zhangxy&#39;s blog">
 <meta property="og:description" content="隐式类型转换一.值类型之间的数据类型转换(1)数字和字符串使用+运算符 数字和字符串如果使用+运算符进行操作，那么会将数字先转换为字符串，然后进行字符串连接操作: 123var a = &quot;a&quot;;var num = 1;console.log(a+1); (2)布尔值参与的+运算符操作 如果有布尔型参与，那么首先会将布尔值转换为对应的数字或者字符串，然后再进行相应的字符串连接或者算数运算。 123v">
-<meta property="og:updated_time" content="2018-04-25T13:31:29.566Z">
+<meta property="og:updated_time" content="2018-04-25T13:36:59.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="隐式类型转换">
 <meta name="twitter:description" content="隐式类型转换一.值类型之间的数据类型转换(1)数字和字符串使用+运算符 数字和字符串如果使用+运算符进行操作，那么会将数字先转换为字符串，然后进行字符串连接操作: 123var a = &quot;a&quot;;var num = 1;console.log(a+1); (2)布尔值参与的+运算符操作 如果有布尔型参与，那么首先会将布尔值转换为对应的数字或者字符串，然后再进行相应的字符串连接或者算数运算。 123v">
@@ -218,6 +218,8 @@
 <p>大多数对象隐式转换为值类型都是首先尝试调用valueOf()方法。但是Date对象是个例外，此对象的valueOf()和toString()方法都经过精心重写，默认是调用toString()方法，比如使用+运算符，如果在其他算数运算环境中，则会转而调用valueOf()方法。</p>
 <p>代码实例如下:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var date = new Date();</span><br><span class="line">console.log(date + <span class="string">"1"</span>);</span><br><span class="line">console.log(date + 1);</span><br><span class="line">console.log(date - 1);</span><br><span class="line">console.log(date * 1);</span><br></pre></td></tr></table></figure>
+<p>另:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">undefined &lt;= 0  <span class="literal">false</span></span><br><span class="line">undefined =&gt; 0  <span class="literal">false</span></span><br><span class="line">undefined == 0  <span class="literal">false</span></span><br><span class="line">null &lt;= 0  <span class="literal">true</span></span><br><span class="line">undefined == null <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>不发生隐式类型转换: ===  !==</p>
 
       
 
@@ -485,7 +487,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">H5 canvas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">md</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -493,7 +507,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">md</a>
+                <a href="javascript:void(0)" class="js-tag color1">mobile Terminal</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,19 +519,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mobile Terminal</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
             
             <div class="clearfix"></div>
